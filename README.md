@@ -1,5 +1,3 @@
 # Andrew Suzuki Site
 
-This is my personal website. Static site generation is courtesy of [Jekyll](http://jekyllrb.com).
-
-Feel free to copy whatever you want, as long is you don't, like, pose as me or something.
+This is my personal website, consisting of both a portfolio and a blog. Static site generation is courtesy of [Hexo](https://hexo.io).
