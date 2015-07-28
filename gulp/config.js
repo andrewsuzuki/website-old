@@ -27,12 +27,23 @@ module.exports = {
         'dest': 'build/fonts'
     },
 
-    'views': {
-        'watch': [
-            'app/views/**/*.html'
+    'partials': {
+        'src': [
+            'app/partials/**/*.html',
+            'app/partials/**/*.ejs',
+        ]
+    },
+
+    'content': {
+        'src': [
+            'content/**/*.md'
         ],
-        'src': 'app/views/**/*.html',
         'dest': 'build'
+    },
+
+    'templates': {
+        'page': 'app/partials/page.ejs',
+        'post': 'app/partials/post.ejs'
     },
 
     'gzip': {
@@ -44,7 +55,7 @@ module.exports = {
     'dist': {
         'root': 'build'
     },
-    
+
     'ghPages': {
         'branch': 'master'
     },

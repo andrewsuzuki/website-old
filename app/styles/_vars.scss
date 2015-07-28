@@ -3,9 +3,12 @@ $color-bg: #FFFFFF;
 $color-link: #2185C5;
 $color-link-hover: #FF7F66;
 $color-header: #FFFFFF; // logo and nav
-$color-footer: #808080;
+$color-header-bg: #3E454C;
+$color-footer: lighten($color-primary, 40);
 $color-heading-large: $color-primary; // h2 - h3
 $color-heading-small: #808080; // h4 - h6
+$color-selection: $color-header;
+$color-selection-bg: lighten($color-header-bg, 38);
 
 $text-font-stack: 'Lato', Helvetica, sans-serif;
 $heading-font-stack: 'Alegreya', serif;

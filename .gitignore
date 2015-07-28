@@ -3,6 +3,7 @@ Thumbs.db
 *.log
 node_modules/
 build/
+tmp/
 
 # Vi/m
 *.swp
