@@ -1,0 +1,146 @@
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+
+body {
+    background: $color-bg;
+    color: $color-primary;
+    font: 100% $text-font-stack;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-stack;
+    font-size: $color-heading-large;
+    font-weight: 700;
+}
+
+h1 {
+    color: $color-header;
+    font-size: 80px;
+}
+
+h2, h3 {
+    color: $color-heading-large;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h4, h5, h6 {
+    color: $color-heading-small;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 25px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin: 0;
+    background: #3E454C;
+    color: #ffffff;
+    font-family: 'Alegreya', serif;
+    font-weight: 700;
+
+    .logo {
+        position: absolute;
+        z-index: 2;
+        float: left;
+        top: 72px;
+        left: 30px;
+    }
+
+    nav {
+        z-index: 3;
+        float: right;
+        position: absolute;
+        top: 110px;
+        right: 20px;
+
+        ul {
+            list-style: none;
+                
+            li {
+                display: inline-block;
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    color: $color-header;
+                    font-size: 20px;
+                    border-radius: 20px;
+
+                    &:hover {
+                        color: inherit;
+                        border: 3px solid $color-link-hover;
+                        padding: 7px;
+                    }
+                }
+            }
+        }
+    }
+
+    canvas#voro {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+main {
+    margin: 50px auto;
+    width: 700px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    color: $color-footer;
+    font-size: 10px;
+}
