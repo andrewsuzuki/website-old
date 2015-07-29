@@ -16,8 +16,6 @@ var handleErrors = require('../util/handleErrors');
 var browserSync  = require('browser-sync');
 var debowerify   = require('debowerify');
 var ngAnnotate   = require('browserify-ngannotate');
-var envify       = require('envify/custom');
-var argv         = require('yargs').argv;
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
@@ -35,11 +33,6 @@ function buildScript(file) {
         bundler.on('update', function() {
             rebundle();
         });
-
-        // if --api cl arg is specified, use as api endpoint
-        bundler.transform(envify({
-            DEV_API: argv.api 
-        }));
     }
 
     var transforms = [

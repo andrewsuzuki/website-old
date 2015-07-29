@@ -6,18 +6,37 @@ var express = require('express');
 var gulp    = require('gulp');
 var gutil   = require('gulp-util');
 var morgan  = require('morgan');
+var fs      = require('fs');
+var path    = require('path');
 
 gulp.task('server', function() {
 
     var server = express();
 
-    // log all requests to the console
+    // Log all requests to the console
     server.use(morgan('dev'));
+
+    // Append .html to requests for existing html pages (/about -> /about.html)
+    server.use(function(req, res, next) {
+        if (req.path.indexOf('.') === -1) {
+            var file = path.join(config.dist.root, req.path + '.html');
+            fs.exists(file, function(exists) {
+                if (exists) {
+                    req.url += '.html';
+                }
+                next();
+            });
+        } else {
+            next();
+        }
+    });
+ 
+    // Serve static files
     server.use(express.static(config.dist.root));
 
-    // Serve index.html for all routes to leave routing up to Angular
-    server.all('/*', function(req, res) {
-        res.sendFile('index.html', { root: 'build' });
+    // Catch-all: send 404.html
+    server.use(function(req, res) {
+        res.status(404).sendFile('404.html', { root: config.dist.root });
     });
 
     // Start webserver if not already running

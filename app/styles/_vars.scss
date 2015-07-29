@@ -1,10 +1,11 @@
-$color-primary: rgba(0, 0, 0, 0.8);
-$color-bg: #FFFFFF;
-$color-link: #2185C5;
-$color-link-hover: #FF7F66;
+$color-primary: rgba(0, 0, 0, 0.8); // lightened black
+$color-bg: #FFFFFF; // whitej
+$color-link: #2185C5; // blue
+$color-link-hover: #FF7F66; // red
+$color-secondary: #7ECEFD; // light blue
 $color-header: #FFFFFF; // logo and nav
-$color-header-bg: #3E454C;
-$color-footer: lighten($color-primary, 40);
+$color-header-bg: #3E454C; // gray
+$color-footer: lighten($color-primary, 40); // light gray
 $color-heading-large: $color-primary; // h2 - h3
 $color-heading-small: #808080; // h4 - h6
 $color-selection: $color-header;

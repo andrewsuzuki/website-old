@@ -87,6 +87,10 @@ header {
         float: left;
         top: 72px;
         left: 30px;
+
+        h1 a {
+            color: $color-header;
+        }
     }
 
     nav {
@@ -109,10 +113,15 @@ header {
                     font-size: 20px;
                     border-radius: 20px;
 
-                    &:hover {
+                    &:hover, &.active:hover {
                         color: inherit;
                         border: 3px solid $color-link-hover;
                         padding: 7px;
+                    }
+
+                    &.active {
+                        @extend &:hover;
+                        border-color: $color-secondary;
                     }
                 }
 

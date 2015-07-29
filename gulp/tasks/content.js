@@ -35,7 +35,15 @@ gulp.task('content', function() {
                 filename: templateFilename,
                 // Template data
                 pageTitle: file.frontMatter.title,
+                permalink: file.frontMatter.permalink, 
                 content: file.contents.toString() // rendered markdown as str
+            };
+            data.activeOn = function(str) {
+                if (str === data.permalink) {
+                    return ' class="active"';
+                } else {
+                    return '';
+                }
             };
 
             // Get template file
@@ -51,7 +59,6 @@ gulp.task('content', function() {
         .pipe(rename(function(path) {
             path.dirname = ''; // flatten for now
             path.extname = '.html';
-            // path.basename = path.basename;
         }))
 
         // Pipe to build destination
