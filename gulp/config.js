@@ -41,6 +41,10 @@ module.exports = {
         'dest': 'build'
     },
 
+    'types': {
+        'src': 'types'
+    },
+
     'templates': {
         'page': 'app/partials/page.ejs',
         'post': 'app/partials/post.ejs'

@@ -1,0 +1,95 @@
+var gutil = require('gulp-util');
+var through = require('through2');
+
+var getType         = require('../util/getType');
+var merge           = require('merge');
+var fs              = require('fs');
+var path            = require('path');
+var ejs             = require('ejs');
+
+var pluginName = 'render'; // TODO change this when it becomes a module
+
+function hl(text) {
+    return gutil.colors.green(text);
+}
+
+module.exports = function() {
+    return through.obj(function(file, enc, cb) {
+        if (!file.frontMatter || Object.getOwnPropertyNames(file.frontMatter).length === 0) {
+            cb(new gutil.PluginError(pluginName, 'File ' + hl(file.relative) + ' does not have required front matter.'));
+            return;
+        }
+        var typeName = file.frontMatter.type;
+        if (!typeName) {
+            cb(new gutil.PluginError(pluginName, 'Content type was not set in file ' + hl(file.relative) + '.'));
+            return;
+        }
+        var Type = getType(typeName);
+        if (!Type) {
+            cb(new gutil.PluginError(pluginName, 'Could not find content type ' + hl(typeName) + ' in file ' + hl(file.relative) + '.'));
+            return;
+        }
+
+        // Various data for both type and template
+        var data = {};
+
+        // EJS options
+        data.filename = ''; // to be filled by Type
+
+        // File info
+        data.extname = path.extname(file.relative);
+        data.dirname = path.dirname(file.relative);
+        data.basename = path.basename(file.relative, data.extname);
+
+        // Add in supplied front matter to data
+        data = merge(data, file.frontMatter);
+
+        // Include the page content
+        data.content = file.contents.toString();
+
+        // Other template data
+        data.year = new Date().getFullYear();
+
+        // Functions
+        data.activeOn = function(str) {
+            if (str === this.permalink) {
+                return ' class="active"';
+            } else {
+                return '';
+            }
+        };
+        data.renderContent = function() {
+            // Get template file
+            var template = fs.readFileSync(this.filename, { encoding: 'utf8' });
+            // Render template with data
+            return ejs.render(template, data);
+        };
+
+        // Use Type on data
+        var TypeInstance;
+        try {
+            TypeInstance = new Type(data);
+        } catch (e) {
+            cb(new gutil.PluginError(pluginName, 'Could not use content type ' + hl(typeName) + ' on file ' + hl(file.relative) + '.'));
+            return;
+        }
+
+        // Force .html extension
+        data.extname = '.html';
+        // Make final relative path
+        var finalRelPath = path.join(data.dirname, data.basename + data.extname);
+        // Set file's new absolute path
+        file.path = path.join(file.base, finalRelPath);
+
+        // Replace file contents with rendered template
+        try {
+            file.contents = new Buffer(data.renderContent());
+            // Keep in stream
+            this.push(file);
+        } catch (e) {
+            this.emit('error', new gutil.PluginError(pluginName, e));
+        }
+
+        cb();
+    });
+};
