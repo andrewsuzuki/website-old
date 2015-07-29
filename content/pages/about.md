@@ -32,11 +32,11 @@ I'm also proficient with some frameworks/platforms/libraries. These include:
 
 Laravel, Wordpress, Bootstrap, jQuery, AngularJS, Node.js, Express
 
-Vim is my code editor of choice when used through tmux and iTerm2. I use OS X and Ubuntu Linux.
+Vim is my code editor of choice when used through tmux, zsh, and iTerm2. I also use OS X and Ubuntu Linux.
 
 #### Cycling
 
-In the summer of 2014, I rode my bicycle on a 4,000-mile, 42-day trek across the United States. I started in New Haven, Connecticut and biked to San Francisco, California. It was a self-supported tour &ndash; I hauled around 70 pounds of gear and mostly camped off the side of the road. You wouldn't believe how few showers I took.
+In the summer of 2014, I rode my bicycle on a 4,000-mile, 42-day trek across the United States. I started in New Haven, Connecticut and biked to San Francisco, California. It was a self-supported tour &ndash; I hauled around 70 pounds of gear and mostly camped off the side of the road. You wouldn't believe how few showers I took!
 
 Aside from touring, I also race road bikes with the UConn Cycling Team and compete with major schools all around the Northeast. I try to ride my bike every day.
 
@@ -46,7 +46,7 @@ I've studied piano for 10 years, euphonium for 8 years, bass for 6 years, and gu
 
 Composition has been an on-and-off thing for me. I was a finalist in the NAfME Eastern Conference Composition Competition and performed my piece in Baltimore. Another piece of mine was toured by the Yale Percussion Trio. More recently, I've produced works for computer, most of which can be found on [my SoundCloud](https://soundcloud.com/andrewsuzuki).
 
-#### About this website
+#### About this Website
 
 You can find information and the source code for this website on Github at [andrewsuzuki/andrewsuzuki.github.io](https://github.com/andrewsuzuki/andrewsuzuki.github.io).
 
