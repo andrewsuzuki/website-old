@@ -46,6 +46,11 @@ module.exports = {
         'post': 'app/partials/post.ejs'
     },
 
+    'root_files': {
+        'src': 'app/root_files/**/*',
+        'dest': 'build'
+    },
+
     'gzip': {
         'src': 'build/**/*.{html,xml,json,css,js,js.map}',
         'dest': 'build/',

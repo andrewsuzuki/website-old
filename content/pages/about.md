@@ -30,13 +30,13 @@ PHP, CSS, HTML, Javascript, Python, Java, C, Ruby, Clojure, Sass, ChucK
 
 I'm also familiar with some frameworks/platforms/libraries. These include:
 
-Laravel, Wordpress, jQuery, AngularJS, Node.js, Express
+Laravel, Wordpress, Bootstrap, jQuery, AngularJS, Node.js, Express
 
 Vim is my code editor of choice when used through tmux and iTerm2. I use OS X and Ubuntu Linux.
 
 #### Cycling
 
-In the summer of 2014, I rode my bicycle on a 4000 mile, 42-day trek across the USA. I started in New Haven, Connecticut and biked to San Francisco, California. It was a self-supported tour &ndash; I hauled around 70 pounds of gear and mostly camped off the side of the road. You wouldn't believe how few showers I took.
+In the summer of 2014, I rode my bicycle on a 4,000-mile, 42-day trek across the United States. I started in New Haven, Connecticut and biked to San Francisco, California. It was a self-supported tour &ndash; I hauled around 70 pounds of gear and mostly camped off the side of the road. You wouldn't believe how few showers I took.
 
 Aside from touring, I also race road bikes with the UConn Cycling Team and compete with major schools all around the Northeast. I try to ride my bike every day.
 
