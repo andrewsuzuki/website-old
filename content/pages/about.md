@@ -26,9 +26,9 @@ I started working as a freelance full-stack web developer in 2010. I've done eve
 
 Along the way, I picked up other languages. The full list, ordered by familiarity, is:
 
-PHP, CSS, HTML, Javascript, Python, Java, C, Ruby, Clojure, Sass, ChucK
+PHP, CSS, HTML, Javascript, Python, Java, C, Ruby, Clojure, Sass, Matlab, ChucK
 
-I'm also familiar with some frameworks/platforms/libraries. These include:
+I'm also proficient with some frameworks/platforms/libraries. These include:
 
 Laravel, Wordpress, Bootstrap, jQuery, AngularJS, Node.js, Express
 
@@ -45,6 +45,10 @@ Aside from touring, I also race road bikes with the UConn Cycling Team and compe
 I've studied piano for 10 years, euphonium for 8 years, bass for 6 years, and guitar for 4 years. I have played in various concert bands, orchestras, piano trios, and rock bands.
 
 Composition has been an on-and-off thing for me. I was a finalist in the NAfME Eastern Conference Composition Competition and performed my piece in Baltimore. Another piece of mine was toured by the Yale Percussion Trio. More recently, I've produced works for computer, most of which can be found on [my SoundCloud](https://soundcloud.com/andrewsuzuki).
+
+#### About this website
+
+You can find information and the source code for this website on Github at [andrewsuzuki/andrewsuzuki.github.io](https://github.com/andrewsuzuki/andrewsuzuki.github.io).
 
 #### Contact
 
