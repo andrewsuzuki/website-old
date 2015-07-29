@@ -10,6 +10,7 @@ $color-heading-large: $color-primary; // h2 - h3
 $color-heading-small: #808080; // h4 - h6
 $color-selection: $color-header;
 $color-selection-bg: lighten($color-header-bg, 38);
+$color-form-border: lighten($color-primary, 75);
 
 $text-font-stack: 'Lato', Helvetica, sans-serif;
 $heading-font-stack: 'Alegreya', serif;

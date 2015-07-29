@@ -71,6 +71,34 @@ h6 {
     font-size: 20px;
 }
 
+form {
+    input, textarea {
+        display: block; 
+        width: 50%;
+        margin-bottom: 15px;
+        padding: 5px;
+        border: 1px solid $color-form-border;
+        font: 100% $text-font-stack;
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 100px;
+        max-width: 100%;
+    }
+
+    button {
+        @extend input;
+        width: auto;
+        padding: 5px 15px;
+        background: $color-bg;
+        border-color: $color-link; 
+        color: $color-link;
+        cursor: pointer;
+    }
+}
+
 header {
     position: relative;
     width: 100%;
@@ -156,6 +184,10 @@ footer {
     text-align: center;
     color: $color-footer;
     font-size: 15px;
+
+    a {
+        color: inherit;
+    }
 }
 
 ::selection {
@@ -265,5 +297,11 @@ footer {
     main {
         margin: 20px auto;
         width: 90%;
+    }
+
+    form {
+        input, textarea {
+            width: 100%;
+        }
     }
 }
