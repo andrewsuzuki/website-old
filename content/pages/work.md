@@ -4,4 +4,4 @@ title: Work
 permalink: work
 ---
 
-This is a little about my work.
+Coming soon.

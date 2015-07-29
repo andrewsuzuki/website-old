@@ -1,6 +1,5 @@
-var gutil = require('gulp-util');
-var through = require('through2');
-
+var gutil           = require('gulp-util');
+var through         = require('through2');
 var getType         = require('../util/getType');
 var merge           = require('merge');
 var fs              = require('fs');
@@ -9,24 +8,20 @@ var ejs             = require('ejs');
 
 var pluginName = 'render'; // TODO change this when it becomes a module
 
-function hl(text) {
-    return gutil.colors.green(text);
-}
-
 module.exports = function() {
     return through.obj(function(file, enc, cb) {
         if (!file.frontMatter || Object.getOwnPropertyNames(file.frontMatter).length === 0) {
-            cb(new gutil.PluginError(pluginName, 'File ' + hl(file.relative) + ' does not have required front matter.'));
+            cb(new gutil.PluginError(pluginName, 'File "' + file.relative + '" does not have required front matter.'));
             return;
         }
         var typeName = file.frontMatter.type;
         if (!typeName) {
-            cb(new gutil.PluginError(pluginName, 'Content type was not set in file ' + hl(file.relative) + '.'));
+            cb(new gutil.PluginError(pluginName, 'Content type was not set in file "' + file.relative + '".'));
             return;
         }
         var Type = getType(typeName);
         if (!Type) {
-            cb(new gutil.PluginError(pluginName, 'Could not find content type ' + hl(typeName) + ' in file ' + hl(file.relative) + '.'));
+            cb(new gutil.PluginError(pluginName, 'Could not find content type "' + typeName+ '" in file "' + file.relative + '".'));
             return;
         }
 
@@ -66,11 +61,10 @@ module.exports = function() {
         };
 
         // Use Type on data
-        var TypeInstance;
         try {
-            TypeInstance = new Type(data);
+            Type(data);
         } catch (e) {
-            cb(new gutil.PluginError(pluginName, 'Could not use content type ' + hl(typeName) + ' on file ' + hl(file.relative) + '.'));
+            cb(new gutil.PluginError(pluginName, 'Could not use content type "' + typeName + '" on file "' + file.relative + '".'));
             return;
         }
 
