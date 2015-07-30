@@ -9,10 +9,10 @@ var render          = require('../plugins/render');
 var handleErrors    = require('../util/handleErrors');
 var browserSync     = require('browser-sync');
 
-// Content task
-gulp.task('content', function() {
+// Posts task
+gulp.task('posts', function() {
 
-    return gulp.src(config.content.src)
+    return gulp.src(config.content.postSrc)
         // Extract/remove front matter data from page/post
         .pipe(frontMatter({ 
             property: 'frontMatter',
@@ -22,7 +22,7 @@ gulp.task('content', function() {
         .pipe(markdown())
         // Render ejs template with data and insert rendered markdown
         // (see file gulp/plugins/render.js)
-        .pipe(render(false))
+        .pipe(render(true))
         // Handle errors
         .on('error', handleErrors)
         // Pipe to build destination

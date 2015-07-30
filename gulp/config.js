@@ -37,9 +37,13 @@ module.exports = {
     },
 
     'content': {
-        'src': [
-            'content/**/*.md'
+        'postSrc': [
+            'content/posts/**/*.md',
         ],
+        'src': [
+            'content/**/*.md',
+            '!content/posts/**' // exclude posts
+         ]
     },
 
     'types': {

@@ -1,6 +1,7 @@
 var gutil           = require('gulp-util');
 var through         = require('through2');
 var getType         = require('../util/getType');
+var postCollector   = require('../util/postCollector');
 var merge           = require('merge');
 var fs              = require('fs');
 var path            = require('path');
@@ -8,7 +9,7 @@ var ejs             = require('ejs');
 
 var pluginName = 'render'; // TODO change this when it becomes a module
 
-module.exports = function() {
+module.exports = function(isPosts) {
     return through.obj(function(file, enc, cb) {
         if (!file.frontMatter || Object.getOwnPropertyNames(file.frontMatter).length === 0) {
             cb(new gutil.PluginError(pluginName, 'File "' + file.relative + '" does not have required front matter.'));
@@ -78,8 +79,17 @@ module.exports = function() {
         // Replace file contents with rendered template
         try {
             file.contents = new Buffer(data.renderContent());
+
+            // Add data to file
+            file.data = data;
+
             // Keep in stream
             this.push(file);
+
+            // Add to postCollector if this is a post
+            if (isPosts) {
+                postCollector.push(file);
+            }
         } catch (e) {
             this.emit('error', new gutil.PluginError(pluginName, e));
         }
