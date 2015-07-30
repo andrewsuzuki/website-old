@@ -30,7 +30,7 @@ gulp.task('content', function() {
         .on('error', handleErrors)
 
         // Pipe to build destination
-        .pipe(gulp.dest(config.content.dest))
+        .pipe(gulp.dest(config.dist.root))
 
         // Reload BrowserSync
         .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true })));

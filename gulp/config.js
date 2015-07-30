@@ -6,6 +6,8 @@ module.exports = {
     'uiport'       : 3001,
     'serverport'   : 3002,
 
+    'moveAliasesInProduction': true,
+
     'styles': {
         'src' : ['app/styles/**/*.scss'],
         'dest': 'build/css',
@@ -38,7 +40,6 @@ module.exports = {
         'src': [
             'content/**/*.md'
         ],
-        'dest': 'build'
     },
 
     'types': {
