@@ -1,6 +1,6 @@
 
     <li>
         <a href="/<%= post.permalink %>"><%= post.title %></a>
-        <span class="meta">Posted on blah</span>
+        <span class="meta">Posted on <%= post.formatDateShort(post.date) %></span>
     </li>
 

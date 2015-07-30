@@ -67,9 +67,11 @@ module.exports = function(isPosts) {
             // Render template with data
             return ejs.render(template, data);
         };
-
         data.formatDate = function(moment) {
             return moment.format(config.dateFormat);
+        };
+        data.formatDateShort = function(moment) {
+            return moment.format(config.dateFormatShort);
         };
 
         // Use Type on data

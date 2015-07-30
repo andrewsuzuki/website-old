@@ -9,6 +9,7 @@ module.exports = {
     'moveAliasesInProduction': true,
 
     'dateFormat': 'MMMM Do YYYY, h:mm:ss a',
+    'dateFormatShort': 'MMMM Do, YYYY',
 
     'styles': {
         'src' : ['app/styles/**/*.scss'],
