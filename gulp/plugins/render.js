@@ -46,12 +46,9 @@ module.exports = function(isPosts) {
         data.content = file.contents.toString();
 
         // Other template data
-        console.log(data);
         data.rawDate = data.date;
         if (data.rawDate) {
-            console.log(data.rawDate);
             data.date = moment(data.date);
-            console.log(data.date.format());
         }
 
         data.thisYear = new Date().getFullYear();
