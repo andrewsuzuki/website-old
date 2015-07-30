@@ -4,4 +4,6 @@ title: Blog
 permalink: blog
 ---
 
-Coming soon.
+<ul class="postList">
+    <ejs- postList ejs>
+</ul>

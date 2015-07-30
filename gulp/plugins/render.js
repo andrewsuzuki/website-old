@@ -65,30 +65,27 @@ module.exports = function(isPosts) {
         try {
             Type(data);
         } catch (e) {
-            cb(new gutil.PluginError(pluginName, 'Could not use content type "' + typeName + '" on file "' + file.relative + '".'));
+            cb(new gutil.PluginError(pluginName, 'Could not use content type "' + typeName + '" on file "' + file.relative + '" -- ' + e + '.'));
             return;
         }
 
         // Force .html extension
         data.extname = '.html';
         // Make final relative path
-        var finalRelPath = path.join(data.dirname, data.basename + data.extname);
+        data.permalink = path.join(data.dirname, data.basename + data.extname);
         // Set file's new absolute path
-        file.path = path.join(file.base, finalRelPath);
+        file.path = path.join(file.base, data.permalink);
 
         // Replace file contents with rendered template
         try {
             file.contents = new Buffer(data.renderContent());
 
-            // Add data to file
-            file.data = data;
-
             // Keep in stream
             this.push(file);
 
-            // Add to postCollector if this is a post
+            // Add data to postCollector if this is a post
             if (isPosts) {
-                postCollector.push(file);
+                postCollector.push(data);
             }
         } catch (e) {
             this.emit('error', new gutil.PluginError(pluginName, e));

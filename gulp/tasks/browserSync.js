@@ -11,7 +11,8 @@ gulp.task('browserSync', function() {
         ui: {
             port: config.uiport
         },
-        proxy: 'localhost:' + config.serverport
+        proxy: 'localhost:' + config.serverport,
+        open: false
     });
 
 });

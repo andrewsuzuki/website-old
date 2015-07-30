@@ -181,6 +181,20 @@ main {
     width: 700px;
     font-size: 20px;
     line-height: 1.7;
+
+    ul.postList {
+        list-style-type: none;
+
+        li {
+            font-size: 30px;
+            padding: 0 0 10px 0;
+
+            span.meta {
+                display: block;
+                font-size: 15px;
+            }
+        }
+    }
 }
 
 footer {

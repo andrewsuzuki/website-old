@@ -57,6 +57,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "karma": "^0.13.3",
+    "lodash": "^3.10.0",
     "merge": "^1.2.0",
     "morgan": "^1.6.1",
     "pretty-hrtime": "^1.0.0",
