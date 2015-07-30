@@ -15,4 +15,8 @@ module.exports = function (data) {
             return '';
         }
     };
+    
+    data.url = function() {
+        return '/blog/' + data.permalink;
+    }
 }

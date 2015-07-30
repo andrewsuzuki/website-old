@@ -73,6 +73,9 @@ module.exports = function(isPosts) {
         data.formatDateShort = function(moment) {
             return moment.format(config.dateFormatShort);
         };
+        data.url = function() {
+            return '/' + this.permalink;
+        };
 
         // Use Type on data
         try {
@@ -85,9 +88,9 @@ module.exports = function(isPosts) {
         // Force .html extension
         data.extname = '.html';
         // Make final relative path
-        data.permalink = path.join(data.dirname, data.basename + data.extname);
+        data.relative = path.join(data.dirname, data.basename + data.extname);
         // Set file's new absolute path
-        file.path = path.join(file.base, data.permalink);
+        file.path = path.join(file.base, data.relative);
 
         // Replace file contents with rendered template
         try {
