@@ -9,11 +9,17 @@
     </header>
 
     <main>
-        <h2><%= title %></h2>
+        <article class="post">
+            <header>
+                <h2><%= title %></h2>
+                <p class="meta"><%- formatDate(date) %></p>
+            </header>
+            <section class="body">
 
-        POST
+                <%- content %>
 
-        <%- content %>
+            </section>
+        </article>
     </main>
 
     <footer>

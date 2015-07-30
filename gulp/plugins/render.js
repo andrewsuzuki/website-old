@@ -2,10 +2,12 @@ var gutil           = require('gulp-util');
 var through         = require('through2');
 var getType         = require('../util/getType');
 var postCollector   = require('../util/postCollector');
+var config          = require('../config');
 var merge           = require('merge');
 var fs              = require('fs');
 var path            = require('path');
 var ejs             = require('ejs');
+var moment          = require('moment');
 
 var pluginName = 'render'; // TODO change this when it becomes a module
 
@@ -44,7 +46,15 @@ module.exports = function(isPosts) {
         data.content = file.contents.toString();
 
         // Other template data
-        data.year = new Date().getFullYear();
+        console.log(data);
+        data.rawDate = data.date;
+        if (data.rawDate) {
+            console.log(data.rawDate);
+            data.date = moment(data.date);
+            console.log(data.date.format());
+        }
+
+        data.thisYear = new Date().getFullYear();
 
         // Functions
         data.activeOn = function(str) {
@@ -59,6 +69,10 @@ module.exports = function(isPosts) {
             var template = fs.readFileSync(this.filename, { encoding: 'utf8' });
             // Render template with data
             return ejs.render(template, data);
+        };
+
+        data.formatDate = function(moment) {
+            return moment.format(config.dateFormat);
         };
 
         // Use Type on data

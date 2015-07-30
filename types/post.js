@@ -9,7 +9,7 @@ module.exports = function (data) {
     data.basename = path.basename(data.permalink);
 
     data.activeOn = function(str) {
-        if (str === 'blog:' + data.permalink) {
+        if (str === 'blog' || str === 'blog:' + data.permalink) {
             return ' class="active"';
         } else {
             return '';
