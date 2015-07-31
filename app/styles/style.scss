@@ -182,6 +182,11 @@ main {
     font-size: 20px;
     line-height: 1.7;
 
+    img {
+        width: 800px;
+        margin: 25px -50px 15px -50px;
+    }
+
     ul li ul {
         margin: 0 0 0 20px;
     }
@@ -341,5 +346,13 @@ footer {
         input, textarea {
             width: 100%;
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    main img {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 }

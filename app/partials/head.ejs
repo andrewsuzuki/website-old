@@ -1,6 +1,8 @@
 
     <meta charset="UTF-8">
+
     <base href="/">
+
     <title><%= title %> - Andrew Suzuki</title>
 
     <!-- Favicon -->
@@ -11,8 +13,11 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fluidbox/1.4.3.1/css/fluidbox.css">
 
     <!-- JS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fluidbox/1.4.3.1/jquery.fluidbox.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.23/paper-full.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/gorhill/Javascript-Voronoi/master/rhill-voronoi-core.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -23,7 +28,7 @@
         var oldSize = view.size;
         var spotColor = new Color('#2185C5');
         var mousePos = view.center;
-        var selected = false;
+        var selected = true;
 
         onResize();
 
@@ -130,11 +135,11 @@
             renderDiagram();
         }
 
-        function onKeyDown(event) {
+        /*function onKeyDown(event) {
             if (event.key == 'space') {
                 selected = !selected;
                 renderDiagram();
             }
-        }
+        }*/
     </script>
 

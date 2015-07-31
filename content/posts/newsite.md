@@ -1,7 +1,7 @@
 ---
 type: post
-title: Welcome
-permalink: welcome
+title: New Site
+permalink: newsite
 date: 2015-07-30
 ---
 
@@ -11,7 +11,7 @@ Hello! This is my first blog post. I've been rolling with the same old site for 
 
 The blog will consist of different types of content that I pull from experiences in my various interests. Here's my plan:
 
-* Programming: tutorials, work, open source projects, stories, opinion
+* Programming: tutorials, work, open source projects, opinion, vim, workflow
 * Music: compositions, discoveries, shows, gear talk
 * Cycling: touring and racing photo blogs, gear talk
 * Other: huge realizations, vacations, college, life events, random DIY, books
@@ -20,7 +20,7 @@ The blog will consist of different types of content that I pull from experiences
 
 I designed this site in a couple of days. Most of the design time was spent perfecting the typography to the best of my ability (without spending money). I took some inspiration from Medium - a fairly large paragraph font size, font smoothing, big headings. 
 
-The header is an interactive [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) using [Paper.js](http://paperjs.org). I achieved this by modifying one of the examples on the Paper.js website. I plan on changing this to something I build from scratch, but for now it as something fairly unique. Make sure to press the space bar if you haven't yet!
+The header is an interactive [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) using [Paper.js](http://paperjs.org). I achieved this by modifying one of the examples on the Paper.js website. I plan on changing this to something I build from scratch, but for now it's just something fairly unique.
 
 ### New Workflow
 
