@@ -4,13 +4,6 @@ title: Work
 permalink: work
 ---
 
-<!--
-Nourish
-iaei
-Vessel
-This site
--->
-
 [Jump to portfolio](work#portfolio)
 
 I am a full-stack web developer. To me, this means I can craft both the front and back end of websites and web apps. I can do anything from making small changes to business websites to custom web apps. This includes:
@@ -41,7 +34,7 @@ If you're a developer, you might want to take a look at my Github account: [@and
 
 #### Nourish
 
-[![Nourish](http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg)](http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg)
+[![Nourish](images/screens/nourish.png)](images/screens/nourish.png)
 
 [Visit site](#)
 
@@ -59,7 +52,7 @@ This is an example of my ability to take a designer's mockup and turn it into a 
 
 Additionally, the layout is responsive. This means its structure changes depending on the browser window size for a better experience on mobile, tablet, and desktop devices.
 
-#### This site
+#### Andrewsuzuki.com
 
 [![andrewsuzuki.com](images/screens/ascom.png)](images/screens/ascom.png)
 
